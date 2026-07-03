@@ -1,5 +1,6 @@
 PODS:
   - boost (1.84.0)
+  - CatCrypto (0.3.2)
   - DoubleConversion (1.1.6)
   - fast_float (6.1.4)
   - FBLazyVector (0.77.3)
@@ -1296,6 +1297,8 @@ PODS:
     - Yoga
   - react-native-safe-area-context (5.2.0):
     - React-Core
+  - react-native-sensitive-info (6.0.0-alpha.9):
+    - React-Core
   - react-native-splash-screen (3.2.0):
     - React
   - react-native-video (6.10.0):
@@ -1630,6 +1633,9 @@ PODS:
     - React-logger (= 0.77.3)
     - React-perflogger (= 0.77.3)
     - React-utils (= 0.77.3)
+  - RNArgon2 (2.0.1):
+    - CatCrypto
+    - React-Core
   - RNCAsyncStorage (2.0.0):
     - React-Core
   - RNCMaskedView (0.3.1):
@@ -1861,6 +1867,7 @@ DEPENDENCIES:
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - react-native-pager-view (from `../node_modules/react-native-pager-view`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - react-native-sensitive-info (from `../node_modules/react-native-sensitive-info`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
   - react-native-video (from `../node_modules/react-native-video`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
@@ -1892,6 +1899,7 @@ DEPENDENCIES:
   - ReactAppDependencyProvider (from `build/generated/ios`)
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNArgon2 (from `../node_modules/react-native-argon2`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-masked-view/masked-view`)"
   - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
@@ -1912,6 +1920,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - CatCrypto
     - IQKeyboardManager
     - libwebp
     - OpenSSL-Universal
@@ -2006,6 +2015,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-pager-view"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-sensitive-info:
+    :path: "../node_modules/react-native-sensitive-info"
   react-native-splash-screen:
     :path: "../node_modules/react-native-splash-screen"
   react-native-video:
@@ -2068,6 +2079,8 @@ EXTERNAL SOURCES:
     :path: build/generated/ios
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNArgon2:
+    :path: "../node_modules/react-native-argon2"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
   RNCMaskedView:
@@ -2103,6 +2116,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
+  CatCrypto: a477899b6be4954e75be4897e732da098cc0a5a8
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
   fast_float: 06eeec4fe712a76acc9376682e4808b05ce978b6
   FBLazyVector: 23d8c5470c648a635893dc0956c6dbaead54b656
@@ -2147,6 +2161,7 @@ SPEC CHECKSUMS:
   react-native-image-picker: 8c8f120521f283d7a069c51d519fbd654e8de8e3
   react-native-pager-view: 68e8a65a607a6f91a1e25865002192c3c4f53fcf
   react-native-safe-area-context: 3e33e7c43c8b74dba436a5a32651cb8d7064c740
+  react-native-sensitive-info: ee358bf2b901ac3d04f63ff637b31daee44ea87f
   react-native-splash-screen: a43276f9cf4b2e65d7ce30efe372ffc528064293
   react-native-video: 75279235027642749f1da92c456b10860c3aa13a
   React-nativeconfig: f77b4627803bf7886a1f2e96b33b8af34e583cc4
@@ -2178,6 +2193,7 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: 31015410a4a53b9fd0a908ad4d6e3e2b9a25086a
   ReactCodegen: eac5d74d85dff515b48a5c36f154bc4128f217e6
   ReactCommon: 145fc5d3aa2192a93e5a3913874a42ff23d4aed9
+  RNArgon2: 708e188b7a4d4ec8baf62463927c47abef453a94
   RNCAsyncStorage: 40367e8d25522dca9c3513c7b9815a184669bd97
   RNCMaskedView: de80352547bd4f0d607bf6bab363d826822bd126
   RNCPicker: 124b4fb5859ba1a3fd53a91e16d1e7a0fc016e59
@@ -2199,6 +2215,6 @@ SPEC CHECKSUMS:
   SSZipArchive: 8a6ee5677c8e304bebc109e39cf0da91ccef22ea
   Yoga: 92f3bb322c40a86b7233b815854730442e01b8c4
 
-PODFILE CHECKSUM: 40ec80970ad73602d0c080abaa8688b2836001cc
+PODFILE CHECKSUM: 1763c2b8d7a7dff97cc56adcbde5146e8a5797ee
 
 COCOAPODS: 1.16.2
