@@ -1,0 +1,9 @@
+BUNDLE_DISPLAY_NAME = KeyManagement
+BUNDLE_IDENTIFIER = farmworker.wallet.os.app.keymanagement
+
+PRODUCT_BUNDLE_IDENTIFIER = $(BUNDLE_IDENTIFIER)$(BUNDLE_IDENTIFIER_APPEND)
+
+RUNTIME_URL = http:\/\/localhost:8080
+
+PRODUCT_NAME = KeyManagement
+HERMES_ENABLED = YES
