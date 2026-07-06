@@ -22,13 +22,18 @@ import SInfo from "react-native-sensitive-info";
  * @param {MxObject} input
  * @param {string} idattr - optional, name of attribute containing id
  * @param {string} idval - optional, manual id value
+ * @param {string} [sharedPreferencesName]
+ * @param {string} [keychainService]
  * @returns {Promise.<boolean>}
  */
-export async function jsa_kcorm_rm(key, input, idattr, idval) {
+export async function jsa_kcorm_rm(key, input, idattr, idval, sharedPreferencesName, keychainService) {
 	// BEGIN USER CODE
 	try{
 		if(input==null)return Promise.reject("Argument input null");
 		if(key==null)return Promise.reject("Argument key null");
+		let settings={};
+		if(sharedPreferencesName!=null)settings.sharedPreferencesName=sharedPreferencesName;
+		if(keychainService!=null)settings.keychainService=keychainService;
 		let obj={};
 		try{
 			//https://mcodex.dev/react-native-sensitive-info/docs/getItem
@@ -38,10 +43,10 @@ export async function jsa_kcorm_rm(key, input, idattr, idval) {
 				return Promise.reject("Hybrid_mobile not supported");
 			}else if (navigator && navigator.product === "ReactNative") {
 				//react native
-				kcval=await SInfo.getItem(key,{});
+				kcval=await SInfo.getItem(key,settings);
 			}else {
 				//web
-				kcval=await jsa_web_getItem(null,key);
+				kcval=await jsa_web_getItem(sharedPreferencesName,key);
 			}
 			if(kcval!=null&&kcval!="")try{
 				obj=JSON.parse(kcval);
@@ -100,10 +105,10 @@ export async function jsa_kcorm_rm(key, input, idattr, idval) {
 			return Promise.reject("Hybrid_mobile not supported");
 		}else if (navigator && navigator.product === "ReactNative") {
 			//react native
-			await SInfo.setItem(key,JSON.stringify(obj),{});
+			await SInfo.setItem(key,JSON.stringify(obj),settings);
 		}else {
 			//web
-			await jsa_web_setItem(null,key,JSON.stringify(obj));
+			await jsa_web_setItem(sharedPreferencesName,key,JSON.stringify(obj));
 		}
 		//todo:handle true false return values
 		return Promise.resolve(true);
