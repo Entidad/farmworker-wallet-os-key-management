@@ -1,0 +1,50 @@
+[
+    {
+        "encodedHash": "$argon2id$v=19$m=32768,t=2,p=1$MTIzNDU2Nzg5MTAxMTEyMTMxNDE1MTYxNzE4MTkyMDIxMjIyMzI0MjUyNjI3MjgyOTMwMzEzMjMzMzQzNTM2Mw$Ax1sgt3t4SAPR5RgUFJ0XdVivU2zWOI9rBsRwFLv+Nk",
+        "id": "default-empty-options",
+        "ok": true,
+        "rawHash": "031d6c82ddede1200f4794605052745dd562bd4db358e23dac1b11c052eff8d9"
+    },
+    {
+        "encodedHash": "$argon2id$v=19$m=32768,t=2,p=1$MTIzNDU2Nzg5MTAxMTEyMTMxNDE1MTYxNzE4MTkyMDIxMjIyMzI0MjUyNjI3MjgyOTMwMzEzMjMzMzQzNTM2Mw$Ax1sgt3t4SAPR5RgUFJ0XdVivU2zWOI9rBsRwFLv+Nk",
+        "id": "explicit-defaults-argon2id",
+        "ok": true,
+        "rawHash": "031d6c82ddede1200f4794605052745dd562bd4db358e23dac1b11c052eff8d9"
+    },
+    {
+        "encodedHash": "$argon2id$v=19$m=32768,t=2,p=1$bWVuZGl4LWtleW1hbmFnZW1lbnQtZml4ZWQtc2FsdC0wMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA$SKop1MccJfxONS2mWlMMmjKPpFHXVA7lAv77+sSQ/zo",
+        "id": "mnemonic-like-seed",
+        "ok": true,
+        "rawHash": "48aa29d4c71c25fc4e352da65a530c9a328fa451d7540ee502fefbfac490ff3a"
+    },
+    {
+        "encodedHash": "$argon2id$v=19$m=32768,t=2,p=1$MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWYwMTIzNDU2Nzg5YWJjZGVmMDEyMzQ1Njc4OWFiY2RlZg$OfLhi19qfTtuwKS/6GHgUTo05T0cQXUHOO2+Hig3BVM",
+        "id": "unicode-password",
+        "ok": true,
+        "rawHash": "39f2e18b5f6a7d3b6ec0a4bfe861e0513a34e53d1c41750738edbe1e28370553"
+    },
+    {
+        "encodedHash": "$argon2i$v=19$m=32768,t=2,p=1$MTIzNDU2Nzg5MTAxMTEyMTMxNDE1MTYxNzE4MTkyMDIxMjIyMzI0MjUyNjI3MjgyOTMwMzEzMjMzMzQzNTM2Mw$TEE4MTf7RBZZT0QMACY65WKmD4Yyzo5lyfRgp1gdlPw",
+        "id": "argon2i-variant",
+        "ok": true,
+        "rawHash": "4c41383137fb4416594f440c00263ae562a60f8632ce8e65c9f460a7581d94fc"
+    },
+    {
+        "encodedHash": "$argon2d$v=19$m=32768,t=2,p=1$MTIzNDU2Nzg5MTAxMTEyMTMxNDE1MTYxNzE4MTkyMDIxMjIyMzI0MjUyNjI3MjgyOTMwMzEzMjMzMzQzNTM2Mw$h9w43HOAH6MhDwrk1/T3iP0gT75666HGsjasqBHHmFU",
+        "id": "argon2d-variant",
+        "ok": true,
+        "rawHash": "87dc38dc73801fa3210f0ae4d7f4f788fd204fbe7aeba1c6b236aca811c79855"
+    },
+    {
+        "encodedHash": "$argon2id$v=19$m=65536,t=4,p=2$MTIzNDU2Nzg5MTAxMTEyMTMxNDE1MTYxNzE4MTkyMDIxMjIyMzI0MjUyNjI3MjgyOTMwMzEzMjMzMzQzNTM2Mw$tMcCAVXDWTij32qQdmL/THvljpPaj5VkfjcL9ePuyEyuhwe3o+0LtdcUNAnXASBcgFAf7ApivwNCq8ndbGl3fA",
+        "id": "high-cost-params",
+        "ok": true,
+        "rawHash": "b4c7020155c35938a3df6a907662ff4c7be58e93da8f95647e370bf5e3eec84cae8707b7a3ed0bb5d7143409d701205c80501fec0a62bf0342abc9dd6c69777c"
+    },
+    {
+        "encodedHash": "$argon2id$v=19$m=32768,t=2,p=1$MTIzNDU2Nzg5MTAxMTEyMTMxNDE1MTYxNzE4MTkyMDIxMjIyMzI0MjUyNjI3MjgyOTMwMzEzMjMzMzQzNTM2Mw$Ax1sgt3t4SAPR5RgUFJ0XdVivU2zWOI9rBsRwFLv+Nk",
+        "id": "CONTROL-hex-salt-footgun",
+        "ok": true,
+        "rawHash": "031d6c82ddede1200f4794605052745dd562bd4db358e23dac1b11c052eff8d9"
+    }
+]
