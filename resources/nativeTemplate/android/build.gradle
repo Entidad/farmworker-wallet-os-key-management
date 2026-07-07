@@ -27,6 +27,7 @@ buildscript {
         maven {
             url "https://packages.rnd.mendix.com/jcenter"
         }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle'

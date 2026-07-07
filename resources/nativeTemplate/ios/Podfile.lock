@@ -1,4 +1,5 @@
 PODS:
+  - Argon2Swift (1.0.4)
   - FBLazyVector (0.84.1)
   - hermes-engine (0.15.1):
     - hermes-engine/Pre-built (= 0.15.1)
@@ -46,6 +47,29 @@ PODS:
     - RNCAsyncStorage
     - SSZipArchive
     - Yoga
+  - NitroModules (0.35.6):
+    - hermes-engine
+    - RCTRequired
+    - RCTTypeSafety
+    - React-callinvoker
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - Yoga
   - op-sqlite (15.2.5):
     - hermes-engine
     - OpenSSL-Universal
@@ -69,7 +93,7 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - OpenSSL-Universal (3.6.0000)
+  - OpenSSL-Universal (3.6.2000)
   - RCTDeprecation (0.84.1)
   - RCTRequired (0.84.1)
   - RCTSwiftUI (0.84.1)
@@ -1718,6 +1742,28 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
+  - react-native-view-shot (5.1.0):
+    - hermes-engine
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - Yoga
   - React-NativeModulesApple (0.84.1):
     - hermes-engine
     - React-callinvoker
@@ -2103,6 +2149,9 @@ PODS:
     - React-utils (= 0.84.1)
     - ReactNativeDependencies
   - ReactNativeDependencies (0.84.1)
+  - RNArgon2 (4.0.0):
+    - Argon2Swift (~> 1.0)
+    - React-Core
   - RNBootSplash (6.3.12):
     - hermes-engine
     - RCTRequired
@@ -2540,6 +2589,30 @@ PODS:
   - SDWebImageWebPCoder (0.15.0):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.17)
+  - SensitiveInfo (6.1.4):
+    - hermes-engine
+    - NitroModules
+    - RCTRequired
+    - RCTTypeSafety
+    - React-callinvoker
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - Yoga
   - SSZipArchive (2.6.0)
   - SwiftAudioEx (1.1.0)
   - Yoga (0.0.0)
@@ -2549,6 +2622,7 @@ DEPENDENCIES:
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - IQKeyboardManager
   - MendixNative (from `../node_modules/mendix-native`)
+  - NitroModules (from `../node_modules/react-native-nitro-modules`)
   - "op-sqlite (from `../node_modules/@op-engineering/op-sqlite`)"
   - RCTDeprecation (from `../node_modules/react-native/ReactApple/Libraries/RCTFoundation/RCTDeprecation`)
   - RCTRequired (from `../node_modules/react-native/Libraries/Required`)
@@ -2596,6 +2670,7 @@ DEPENDENCIES:
   - "react-native-vector-icons (from `../node_modules/@react-native-vector-icons/get-image`)"
   - "react-native-vector-icons-material-icons (from `../node_modules/@react-native-vector-icons/material-icons`)"
   - react-native-video (from `../node_modules/react-native-video`)
+  - react-native-view-shot (from `../node_modules/react-native-view-shot`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-networking (from `../node_modules/react-native/ReactCommon/react/networking`)
   - React-oscompat (from `../node_modules/react-native/ReactCommon/oscompat`)
@@ -2630,6 +2705,7 @@ DEPENDENCIES:
   - ReactCodegen (from `build/generated/ios/ReactCodegen`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeDependencies (from `../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec`)
+  - RNArgon2 (from `../node_modules/react-native-argon2`)
   - RNBootSplash (from `../node_modules/react-native-bootsplash`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCPicker (from `../node_modules/@react-native-picker/picker`)"
@@ -2644,11 +2720,13 @@ DEPENDENCIES:
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNWorklets (from `../node_modules/react-native-worklets`)
+  - SensitiveInfo (from `../node_modules/react-native-sensitive-info`)
   - SSZipArchive
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
+    - Argon2Swift
     - IQKeyboardManager
     - libavif
     - libdav1d
@@ -2669,6 +2747,8 @@ EXTERNAL SOURCES:
     :tag: hermes-v0.15.1
   MendixNative:
     :path: "../node_modules/mendix-native"
+  NitroModules:
+    :path: "../node_modules/react-native-nitro-modules"
   op-sqlite:
     :path: "../node_modules/@op-engineering/op-sqlite"
   RCTDeprecation:
@@ -2761,6 +2841,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-vector-icons/material-icons"
   react-native-video:
     :path: "../node_modules/react-native-video"
+  react-native-view-shot:
+    :path: "../node_modules/react-native-view-shot"
   React-NativeModulesApple:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios"
   React-networking:
@@ -2829,6 +2911,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeDependencies:
     :podspec: "../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec"
+  RNArgon2:
+    :path: "../node_modules/react-native-argon2"
   RNBootSplash:
     :path: "../node_modules/react-native-bootsplash"
   RNCAsyncStorage:
@@ -2857,19 +2941,23 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-svg"
   RNWorklets:
     :path: "../node_modules/react-native-worklets"
+  SensitiveInfo:
+    :path: "../node_modules/react-native-sensitive-info"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  Argon2Swift: 295b8bde7ba61434f227f5610b8813c42e866f74
   FBLazyVector: e97c19a5a442429d1988f182a1940fb08df514da
-  hermes-engine: e171ce5eb126654bf3fe00c8c6ac64370354a6c7
+  hermes-engine: 4e3a89d6c0db5b1a20589d1aca4306ed03b10d1f
   IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
   libavif: 84bbb62fb232c3018d6f1bab79beea87e35de7b7
   libdav1d: 23581a4d8ec811ff171ed5e2e05cd27bad64c39f
   libwebp: 02b23773aedb6ff1fd38cec7a77b81414c6842a8
   MendixNative: b0ea153b893ce40b90016f397e9a5acfe4444c33
+  NitroModules: 5a0f735f3f834ac1d998c28fc65be992849c30f3
   op-sqlite: e9ef65bcf95a97863874cee87841425bb71c8396
-  OpenSSL-Universal: 9110d21982bb7e8b22a962b6db56a8aa805afde7
+  OpenSSL-Universal: ecee7b138fa75a74ecf00d7ffd248fb584739b9e
   RCTDeprecation: af44b104091a34482596cd9bd7e8d90c4e9b4bd7
   RCTRequired: bb77b070f75f53398ce43c0aaaa58337cebe2bf6
   RCTSwiftUI: afc0a0a635860da1040a0b894bfd529da06d7810
@@ -2878,7 +2966,7 @@ SPEC CHECKSUMS:
   React: 1ba7d364ade7d883a1ec055bfc3606f35fdee17b
   React-callinvoker: bc2a26f8d84fb01f003fc6de6c9337b64715f95b
   React-Core: 7840d3a80b43a95c5e80ef75146bd70925ebab0f
-  React-Core-prebuilt: 99eb79df25a61fa0e9b52ff17c4573511c807166
+  React-Core-prebuilt: dad809ab0b00338956edf78b8ae07dde8e7fa729
   React-CoreModules: 2eb010400b63b89e53a324ffb3c112e4c7c3ce42
   React-cxxreact: a558e92199d26f145afa9e62c4233cf8e7950efe
   React-debug: 755200a6e7f5e6e0a40ff8d215493d43cce285fc
@@ -2915,6 +3003,7 @@ SPEC CHECKSUMS:
   react-native-vector-icons: 8215b0e62bf79d3be628cf658ec23777f9bec53c
   react-native-vector-icons-material-icons: 2fe75632937d07937bfe8ca953e1b5d06eef3a1d
   react-native-video: 293a1dfb84d6b79b5bf9dd33925931008e225d5a
+  react-native-view-shot: a0290bf30540d830b4afb30e200e8b7dca2f2a9e
   React-NativeModulesApple: 5ba0903927f6b8d335a091700e9fda143980f819
   React-networking: 3a4b7f9ed2b2d1c0441beacb79674323a24bcca6
   React-oscompat: ff26abf0ae3e3fdbe47b44224571e3fc7226a573
@@ -2948,7 +3037,8 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: e96e93b493d8d86eeaee3e590ba0be53f6abe46f
   ReactCodegen: 797de5178718324c6eba3327b07f9a423fbd5787
   ReactCommon: 07572bf9e687c8a52fbe4a3641e9e3a1a477c78e
-  ReactNativeDependencies: b6cda51edf912d60a9af3405388da56979e07e81
+  ReactNativeDependencies: aceaeda38eb8179a5f93fb853509655c4558b8ad
+  RNArgon2: 138efccb99e2e3047309cdfecb989d4ee3a2f74e
   RNBootSplash: 13b7612788960d0c5446e68489ac2509e506cfcd
   RNCAsyncStorage: 3a4f5e2777dae1688b781a487923a08569e27fe4
   RNCPicker: c8a3584b74133464ee926224463fcc54dfdaebca
@@ -2967,10 +3057,11 @@ SPEC CHECKSUMS:
   SDWebImageAVIFCoder: afe194a084e851f70228e4be35ef651df0fc5c57
   SDWebImageSVGCoder: 15a300a97ec1c8ac958f009c02220ac0402e936c
   SDWebImageWebPCoder: 0e06e365080397465cc73a7a9b472d8a3bd0f377
+  SensitiveInfo: a8d853fd5424f0ddf6d1f7431a560b79bfa5b0cf
   SSZipArchive: 8a6ee5677c8e304bebc109e39cf0da91ccef22ea
   SwiftAudioEx: f6aa653770f3a0d3851edaf8d834a30aee4a7646
   Yoga: c0b3f2c7e8d3e327e450223a2414ca3fa296b9a2
 
-PODFILE CHECKSUM: 7a33012cce520784bb5b691549f5ed2af273b7e3
+PODFILE CHECKSUM: a33eb5cacfd625bbe39f13e24e03f6d85dcc1fd1
 
 COCOAPODS: 1.16.2
