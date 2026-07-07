@@ -52,8 +52,8 @@ After the Studio Pro 11.12 / RN 0.84.1 / argon2 4.0.0 environment is stood up, w
 ### Phase 3 — diff on your laptop
 
 ```sh
-node compare-argon2.mjs golden-ios-2.0.1.json     candidate-ios-4.0.0.json
-node compare-argon2.mjs golden-android-2.0.1.json candidate-android-4.0.0.json
+node compare-argon2.mjs tests/probe-argon-compare/golden-ios-2.0.1.json tests/probe-argon-compare/candidate-ios-4.0.0.json
+node compare-argon2.mjs tests/probe-argon-compare/golden-android-2.0.1.json tests/probe-argon-compare/candidate-android-4.0.0.json
 ```
 
 - **exit 0 / RESULT: SAFE** on both platforms → derivation is stable; the seed-phrase
