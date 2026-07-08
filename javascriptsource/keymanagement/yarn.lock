@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+big-integer@^1.6.52:
+  version "1.6.52"
+  resolved "https://registry.yarnpkg.com/big-integer/-/big-integer-1.6.52.tgz#60a887f3047614a8e1bffe5d7173490a97dc8c85"
+  integrity sha512-QxD8cf2eVqJOOz63z6JIN9BzvVs/dlySa5HGSBH5xtR8dPteIRQnBxxKqkNTiT6jbDTF6jAfrd4oMcND9RGbQg==
+
 json-query@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/json-query/-/json-query-2.2.2.tgz#b6558b8a3794ccd217926aa38024324b77b48ab1"
@@ -21,3 +26,8 @@ react-native-sensitive-info@6.1.4:
   version "6.1.4"
   resolved "https://registry.yarnpkg.com/react-native-sensitive-info/-/react-native-sensitive-info-6.1.4.tgz#351e74f99be1645712fd6e237fc5a00168552821"
   integrity sha512-/iv6eYPhYAGcOw5U7Ob62nBQVwpX5aUrgTa5Otx3JzsCdSpV2k0afwDuuOhulfJ4ocz8ZF0+aTNP8PnzxgnmuQ==
+
+text-encoding@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/text-encoding/-/text-encoding-0.7.0.tgz#f895e836e45990624086601798ea98e8f36ee643"
+  integrity sha512-oJQ3f1hrOnbRLOcwKz0Liq2IcrvDeZRHXhd9RgLrsT+DjWY/nty1Hi7v3dtkaEYbPYe0mUoOfzRrMwfXXwgPUA==
