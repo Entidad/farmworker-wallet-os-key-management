@@ -24,6 +24,7 @@
     "@react-native-vector-icons/material-icons": "12.4.1",
     "@react-navigation/native": "7.2.4",
     "@shopify/flash-list": "2.3.1",
+    "big-integer": "^1.6.52",
     "json-query": "^2.2.2",
     "mendix-native": "https://github.com/mendix/mendix-native/releases/download/v0.5.1/mendix-native-v0.5.1.tgz",
     "react-native": "0.84.1",
@@ -49,7 +50,8 @@
     "react-native-video": "6.19.2",
     "react-native-view-shot": "5.1.0",
     "react-native-worklets": "0.8.3",
-    "semver": "7.7.4"
+    "semver": "7.7.4",
+    "text-encoding": "^0.7.0"
   },
   "devDependencies": {
     "@babel/runtime": "^7.28.4",
