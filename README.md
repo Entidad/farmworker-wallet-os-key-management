@@ -31,7 +31,6 @@ Manage private keys in web or mobile (iOS and Android) platforms
 ```
 nvm install --lts
 nvm use --lts
-npm i --legacy-peer-deps
 ```
 ### Install npm and react-native dependencies
 ```

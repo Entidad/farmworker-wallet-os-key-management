@@ -19,11 +19,11 @@
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>0.2.0</string>
+    <string>1.0.0</string>
     <key>CFBundleSignature</key>
     <string>????</string>
     <key>CFBundleVersion</key>
-    <string>2</string>
+    <string>4</string>
     <key>GoogleMapsApiKey</key>
     <string/>
     <key>LSApplicationQueriesSchemes</key>
@@ -95,5 +95,7 @@
     <false/>
     <key>FirebaseAppDelegateProxyEnabled</key>
     <false/>
+    <key>NSFaceIDUsageDescription</key>
+    <string>Enabling Face ID allows you quick and secure access to your account.</string>
   </dict>
 </plist>
