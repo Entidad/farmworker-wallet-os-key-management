@@ -1,22 +1,27 @@
 # Android legacy seed migration bridge
 
 Reads the **seed phrase** that the old `react-native-sensitive-info@6.0.0-alpha.9` wrote to
-Android SharedPreferences (non-biometric path), so the upgraded app can re-store it via 6.1.4
-and re-derive keyA/keyB. **Android only** — on iOS, 6.1.4 already reads the old keychain data
-directly, so no bridge is needed there. The kcorm demo data is out of scope.
+Android SharedPreferences, so the upgraded app can re-store it via 6.1.4 and re-derive keyA/keyB.
+**Android only** — on iOS, 6.1.4 already reads the old keychain data directly, so no bridge is
+needed there. The kcorm demo data is out of scope.
+
+The reader **auto-detects** which of alpha.9's two Android formats produced the value (a device
+with an enrolled biometric wrote the biometric format; an emulator with none silently fell back
+to the non-biometric format), so it handles both.
 
 ## Why native code is required
-The old value is AES-encrypted with a **hardware-backed, non-exportable** AndroidKeyStore key
-(`MySharedPreferenceKeyAlias`). You can only *use* that key through a Keystore `Cipher` call in
-native code — the key bytes can never reach JS. So the decrypt lives in a small Kotlin module.
+The old value is AES-encrypted with a **hardware-backed, non-exportable** AndroidKeyStore key.
+You can only *use* that key through a Keystore `Cipher` call in native code — the key bytes can
+never reach JS. So the decrypt lives in a native module.
 
-## Exact format being decrypted (alpha.9 non-biometric path)
-| | |
-|---|---|
-| Store | `getSharedPreferences(prefsName, MODE_PRIVATE).getString(key)` → Base64 string |
-| Key | AndroidKeyStore alias `MySharedPreferenceKeyAlias` (AES `SecretKey`) |
-| Cipher | `AES/GCM/NoPadding`, `GCMParameterSpec(128, FIXED_IV={0,1,2,3,4,5,6,7,8,9,0,1})` |
-| Decode | `Base64.decode` → `Cipher.doFinal` → UTF-8 plaintext |
+## Formats auto-detected (discriminator: a `]` in the stored value = biometric)
+`]` is not a valid Base64 character, so its presence unambiguously marks the biometric format.
+
+| | Non-biometric (single Base64 blob) | Biometric (`Base64(IV)]Base64(cipher)`) |
+|---|---|---|
+| Keystore alias | `MySharedPreferenceKeyAlias` | `MyAesKeyAlias` |
+| Cipher | `AES/GCM/NoPadding`, `FIXED_IV={0,1,2,3,4,5,6,7,8,9,0,1}` | `AES/CBC/PKCS7Padding`, `IvParameterSpec(iv)` |
+| Auth | none — synchronous | key is user-auth-required → **BiometricPrompt**, resolves async on success |
 
 ## Files
 | File | Role |
@@ -37,7 +42,11 @@ native code — the key bytes can never reach JS. So the decrypt lives in a smal
    - add before `return packages;`: `packages.add(new LegacyMigrationPackage());`
      (Java requires `new` — omitting it makes the compiler read `LegacyMigrationPackage()` as a
      missing method call, which is what raises the errors.)
-3. Create the `jsa_legacy_android_read` JS action in Studio Pro with this interface, then paste the
+3. **Add the biometric dependency** (needed for the biometric format's `BiometricPrompt`) to
+   `android/app/build.gradle` under `dependencies`:
+   `implementation "androidx.biometric:biometric:1.1.0"`
+   (Skip only if you are certain no production seed was written on a biometric-enrolled device.)
+4. Create the `jsa_legacy_android_read` JS action in Studio Pro with this interface, then paste the
    import + USER CODE from `jsa_legacy_android_read.js`:
    - `key` : String
    - `sharedPreferencesName` : String (optional)
@@ -62,11 +71,17 @@ On first launch after the upgrade:
    via `jsa_argon2` and store those.
 4. Optional: `deleteLegacy(oldPrefsName, oldSeedKey)` to remove the stale old entry.
 
+> For a biometric-format entry, `jsa_legacy_android_read` shows a fingerprint/biometric prompt and
+> resolves only after a successful auth. `LEGACY_AUTH_ERROR_*` rejections mean the user cancelled or
+> auth failed — surface a retry rather than falling through to onboarding in that case.
+
 ## Preconditions & caveats
 - Works only for an **in-place app update** (same Android package name) — the old Keystore key
   survives updates but is destroyed on uninstall/reinstall (in which case the SharedPreferences are
   gone too, so there's nothing to recover — the `null` path handles this).
 - Reader is **read-only** against the old store; it never writes there.
-- Non-biometric path only. If any production seed was written with `touchID:true`, it uses a
-  different alias (`MyAesKeyAlias`), `AES/CBC/PKCS7Padding`, a random IV stored as
-  `Base64(IV)]Base64(cipher)`, and requires a BiometricPrompt — tell me and I'll add that variant.
+- **Biometric format needs a `FragmentActivity` + enrolled biometric.** The prompt is hosted on the
+  current Activity (Mendix's `ReactActivity` is a `FragmentActivity`). If the user removed all
+  biometrics after the old write, the key is invalidated and decrypt fails — handle that rejection
+  by falling back to manual seed re-entry.
+- Legacy pre-API-23 RSA path is not handled (production is modern Android).
