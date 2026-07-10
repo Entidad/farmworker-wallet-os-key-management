@@ -13,7 +13,7 @@ import {jsa_mxobj2json}from"./jsa_mxobj2json.js";
 import {jsa_web_setItem}from"./jsa_web_setItem.js";
 import {jsa_web_getItem}from"./jsa_web_getItem.js";
 import {jsa_uuid}from"./jsa_uuid.js";
-import { SensitiveInfo as SInfo } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 async function mx_data_get_async(options){
 	return new Promise((resolve,reject)=>{
 		options.callback=(o)=>{

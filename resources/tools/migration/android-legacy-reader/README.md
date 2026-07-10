@@ -21,19 +21,22 @@ native code — the key bytes can never reach JS. So the decrypt lives in a smal
 ## Files
 | File | Role |
 |---|---|
-| `LegacySensitiveInfoReaderModule.kt` | The native reader (`readLegacy`, `deleteLegacy`) |
-| `LegacyMigrationPackage.kt` | ReactPackage registering the module |
+| `LegacySensitiveInfoReaderModule.java` | The native reader (`readLegacy`, `deleteLegacy`) |
+| `LegacyMigrationPackage.java` | ReactPackage registering the module |
 | `jsa_legacy_android_read.js` | Mendix JS action wrapping the native call (Android-guarded) |
 
 ## Integration into the Mendix native template
 
-1. Copy both `.kt` files into the native template's Android source tree, e.g.
-   `resources/nativeTemplate/android/app/src/main/java/com/keymanagement/migration/`
-   (keep the `package com.keymanagement.migration` line, or rename the package to match your
-   convention in both files).
-2. Register the package in the app's `MainApplication` (the `getPackages()` / `packages` list):
-   add `packages.add(LegacyMigrationPackage())` (Kotlin) so the module is available at runtime.
-   It's a classic bridge `ReactPackage`; it works under the New Architecture via the interop layer.
+1. Copy both `.java` files into the native template's Android source tree at the path that
+   **matches the package** `fwos.keymanagement.migration` (Java requires package == directory):
+   `resources/nativeTemplate/android/app/src/main/java/fwos/keymanagement/migration/`
+   (These are Java to match the Java `MainApplication`. The app module does support Kotlin, so a
+   `.kt` version also works — but keep only ONE version of each class to avoid a duplicate-class error.)
+2. Register the package in the app's Java `MainApplication.java`, inside `getPackages()`:
+   - add the import at the top: `import fwos.keymanagement.migration.LegacyMigrationPackage;`
+   - add before `return packages;`: `packages.add(new LegacyMigrationPackage());`
+     (Java requires `new` — omitting it makes the compiler read `LegacyMigrationPackage()` as a
+     missing method call, which is what raises the errors.)
 3. Create the `jsa_legacy_android_read` JS action in Studio Pro with this interface, then paste the
    import + USER CODE from `jsa_legacy_android_read.js`:
    - `key` : String

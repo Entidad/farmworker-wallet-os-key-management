@@ -13,7 +13,7 @@ import {jsa_mxobj2json} from"./jsa_mxobj2json.js";
 import {jsa_json2mxobj} from"./jsa_json2mxobj.js";
 import {jsa_uuid} from"./jsa_uuid.js";
 import {jsa_web_getItem} from"./jsa_web_getItem.js";
-import { SensitiveInfo as SInfo } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 import{mx_data_get_async,mx_data_createAsync,getReverseReferences}from"../support/entidad.js";
 // END EXTRA CODE
 

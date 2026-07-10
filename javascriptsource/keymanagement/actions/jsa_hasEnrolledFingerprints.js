@@ -7,7 +7,7 @@
 // Other code you write will be lost the next time you deploy the project.
 import "mx-global";
 import { Big } from "big.js";
-import { getSupportedSecurityLevels } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 
 // BEGIN EXTRA CODE
 // jsa_hasEnrolledFingerprints — cross-platform "has enrolled biometrics" check (react-native-sensitive-info 6.1.x).
@@ -28,7 +28,7 @@ import { getSupportedSecurityLevels } from "react-native-sensitive-info";
 export async function jsa_hasEnrolledFingerprints() {
 	// BEGIN USER CODE
 	try{
-		const caps=await getSupportedSecurityLevels();
+		const caps=await SInfo.getSupportedSecurityLevels();
 		return Promise.resolve(caps!=null&&caps.biometryStatus==="available");
 	}catch(e){
 		console.error("jsa_hasEnrolledFingerprints:error: "+e.toString());

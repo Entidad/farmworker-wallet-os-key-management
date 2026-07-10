@@ -7,7 +7,7 @@
 // Other code you write will be lost the next time you deploy the project.
 import "mx-global";
 import { Big } from "big.js";
-import { SensitiveInfo as SInfo } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 
 // BEGIN EXTRA CODE
 import{jsa_json2mxobj}from"./jsa_json2mxobj.js";

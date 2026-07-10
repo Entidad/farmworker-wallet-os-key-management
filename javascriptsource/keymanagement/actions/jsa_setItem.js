@@ -7,7 +7,7 @@
 // Other code you write will be lost the next time you deploy the project.
 import "mx-global";
 import { Big } from "big.js";
-import { setItem } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 
 // BEGIN EXTRA CODE
 // END EXTRA CODE
@@ -51,7 +51,7 @@ export async function jsa_setItem(key, value, service, accessControl, iosSynchro
 			if(promptCancel!=null&&promptCancel!="")prompt.cancel=promptCancel;
 			options.authenticationPrompt=prompt;
 		}
-		await setItem(key,value,options);
+		await SInfo.setItem(key,value,options);
 		return Promise.resolve(true);
 	}catch(e){
 		return Promise.reject(e.toString());

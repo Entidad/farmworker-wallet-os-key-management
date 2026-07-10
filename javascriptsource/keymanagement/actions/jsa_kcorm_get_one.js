@@ -12,7 +12,7 @@ import { Big } from "big.js";
 import {jsa_mxobj2json} from"./jsa_mxobj2json.js";
 import {jsa_json2mxobj} from"./jsa_json2mxobj.js";
 import {jsa_uuid} from"./jsa_uuid.js";
-import { SensitiveInfo as SInfo } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 // END EXTRA CODE
 
 /**

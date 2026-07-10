@@ -7,7 +7,7 @@
 // Other code you write will be lost the next time you deploy the project.
 import "mx-global";
 import { Big } from "big.js";
-import { deleteItem } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 
 // BEGIN EXTRA CODE
 // END EXTRA CODE
@@ -28,7 +28,7 @@ export async function jsa_deleteItem(key, service, iosSynchronizable, keychainGr
 		//Apple-only scope options; omitted unless provided.
 		if(iosSynchronizable===true)options.iosSynchronizable=true;
 		if(keychainGroup!=null&&keychainGroup!="")options.keychainGroup=keychainGroup;
-		const removed=await deleteItem(key,options);
+		const removed=await SInfo.deleteItem(key,options);
 		return Promise.resolve(removed===true);
 	}catch(e){
 		return Promise.reject(e.toString());

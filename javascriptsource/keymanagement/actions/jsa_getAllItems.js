@@ -7,7 +7,7 @@
 // Other code you write will be lost the next time you deploy the project.
 import "mx-global";
 import { Big } from "big.js";
-import { getAllItems } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 
 // BEGIN EXTRA CODE
 // END EXTRA CODE
@@ -30,7 +30,7 @@ export async function jsa_getAllItems(service, includeValues, iosSynchronizable,
 		//Apple-only scope options; omitted unless provided.
 		if(iosSynchronizable===true)options.iosSynchronizable=true;
 		if(keychainGroup!=null&&keychainGroup!="")options.keychainGroup=keychainGroup;
-		const items=await getAllItems(options);
+		const items=await SInfo.getAllItems(options);
 		const groups={};
 		const order=[];
 		(Array.isArray(items)?items:[]).forEach((it)=>{

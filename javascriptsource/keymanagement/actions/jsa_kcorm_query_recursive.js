@@ -9,7 +9,7 @@ import "mx-global";
 import { Big } from "big.js";
 
 // BEGIN EXTRA CODE
-import { SensitiveInfo as SInfo } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 import {jsa_json2mxobj} from"./jsa_json2mxobj.js";
 import {jsa_kcorm_get_all_recursive} from"./jsa_kcorm_get_all_recursive.js";
 import{default as jsonQuery}from"json-query";

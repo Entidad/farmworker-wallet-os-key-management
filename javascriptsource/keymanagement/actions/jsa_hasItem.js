@@ -7,7 +7,7 @@
 // Other code you write will be lost the next time you deploy the project.
 import "mx-global";
 import { Big } from "big.js";
-import { hasItem } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 
 // BEGIN EXTRA CODE
 // END EXTRA CODE
@@ -27,7 +27,7 @@ export async function jsa_hasItem(key, service, keychainGroup) {
 		const options={service:svc};
 		//Apple-only keychain access group; omitted unless provided.
 		if(keychainGroup!=null&&keychainGroup!="")options.keychainGroup=keychainGroup;
-		const exists=await hasItem(key,options);
+		const exists=await SInfo.hasItem(key,options);
 		return Promise.resolve(exists===true);
 	}catch(e){
 		return Promise.reject(e.toString());

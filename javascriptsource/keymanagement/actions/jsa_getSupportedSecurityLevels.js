@@ -7,7 +7,7 @@
 // Other code you write will be lost the next time you deploy the project.
 import "mx-global";
 import { Big } from "big.js";
-import { getSupportedSecurityLevels } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 
 // BEGIN EXTRA CODE
 // END EXTRA CODE
@@ -19,7 +19,7 @@ import { getSupportedSecurityLevels } from "react-native-sensitive-info";
 export async function jsa_getSupportedSecurityLevels() {
 	// BEGIN USER CODE
 	try{
-		const caps=await getSupportedSecurityLevels();
+		const caps=await SInfo.getSupportedSecurityLevels();
 		return Promise.resolve(JSON.stringify(caps!=null?caps:{}));
 	}catch(e){
 		return Promise.reject(e.toString());

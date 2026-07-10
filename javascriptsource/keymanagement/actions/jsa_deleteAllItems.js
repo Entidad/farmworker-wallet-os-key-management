@@ -7,7 +7,7 @@
 // Other code you write will be lost the next time you deploy the project.
 import "mx-global";
 import { Big } from "big.js";
-import { clearService } from "react-native-sensitive-info";
+import * as SInfo from "react-native-sensitive-info";
 
 // BEGIN EXTRA CODE
 // END EXTRA CODE
@@ -27,7 +27,7 @@ export async function jsa_deleteAllItems(service, iosSynchronizable, keychainGro
 		//Apple-only scope options; omitted unless provided.
 		if(iosSynchronizable===true)options.iosSynchronizable=true;
 		if(keychainGroup!=null&&keychainGroup!="")options.keychainGroup=keychainGroup;
-		await clearService(options);
+		await SInfo.clearService(options);
 		return Promise.resolve(true);
 	}catch(e){
 		return Promise.reject(e.toString());
