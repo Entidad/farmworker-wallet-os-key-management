@@ -31,15 +31,15 @@ export async function jsa_getAllItems(service, includeValues, iosSynchronizable,
 		if(iosSynchronizable===true)options.iosSynchronizable=true;
 		if(keychainGroup!=null&&keychainGroup!="")options.keychainGroup=keychainGroup;
 		const items=await SInfo.getAllItems(options);
-		const groups={};
-		const order=[];
-		(Array.isArray(items)?items:[]).forEach((it)=>{
-			if(!it||typeof(it.key)!="string")return;
-			const s=typeof(it.service)=="string"?it.service:svc;
-			if(typeof(groups[s])!="object"){groups[s]={};order.push(s);}
-			groups[s][it.key]=(it.value!==undefined?it.value:null);
-		});
-		return Promise.resolve(JSON.stringify(order.map((s)=>({service:s,keyItems:groups[s]}))));
+		//flat array: one {service,key,value} object per entry
+		const result=(Array.isArray(items)?items:[])
+			.filter((it)=>it&&typeof(it.key)=="string")
+			.map((it)=>({
+				service:typeof(it.service)=="string"?it.service:"",
+				key:it.key,
+				value:(it.value!==undefined?it.value:null)
+			}));
+		return Promise.resolve(JSON.stringify(result));
 	}catch(e){
 		return Promise.reject(e.toString());
 	}
