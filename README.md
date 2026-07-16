@@ -67,7 +67,7 @@ actions fall back to `localStorage`.
    ```
 3. Open `KeyManagement.mpr` in **Studio Pro 11.12**.
 4. Click **Run → Run Locally**, then **View** to open the app in your browser.
-5. Log in with a seeded demo user, e.g. `demo_user`
+5. Log in with a demo user, e.g. `demo_user`
 
 ## Build & run the native mobile app
 
